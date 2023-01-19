@@ -12,6 +12,16 @@ add_executable(movingTimeframe movingTimeframe.cpp)
 target_link_libraries(examplePlot PRIVATE openGLPlotLive ${LIBS})
 target_link_libraries(movingTimeframe PRIVATE openGLPlotLive ${LIBS})
 
+# Output binary
+set_target_properties(examplePlot
+    PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/bin"
+)
+set_target_properties(movingTimeframe
+    PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/bin"
+)
+
 # Copy Shader files to build directory
 add_custom_command(TARGET examplePlot PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_LIST_DIR}/../Shaders $<TARGET_FILE_DIR:examplePlot>/Shaders)
 

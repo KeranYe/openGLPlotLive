@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.10)
 project(openGLPlotLive)
 
 # Create library
-add_library(${PROJECT_NAME} "")
+add_library(${PROJECT_NAME} SHARED "")
 
 # Glad
 target_sources(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/include/glad.c)
@@ -25,6 +25,12 @@ add_subdirectory(util)
 add_subdirectory(interaction)
 add_subdirectory(textures)
 add_subdirectory(scatterPlot)
+
+# Library output
+set_target_properties(${PROJECT_NAME}
+    PROPERTIES
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/lib"
+)
 
 # Copy Shader files to build directory
 add_custom_command(TARGET openGLPlotLive PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_LIST_DIR}/../Shaders $<TARGET_FILE_DIR:openGLPlotLive>/Shaders)

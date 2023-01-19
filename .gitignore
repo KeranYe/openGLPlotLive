@@ -10,3 +10,6 @@
 include
 /docs/doxygen
 /docs/sphinx
+
+/bin
+/lib
