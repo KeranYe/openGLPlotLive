@@ -24,7 +24,7 @@ else
 	echo "glfw directory already exists! Not cloning."
 fi
 echo "Installing mesa depencies."
-sudo apt-get -y install xorg-dev libglu1-mesa-dev
+sudo apt-get -y install libwayland-dev libxkbcommon-dev xorg-dev libglu1-mesa-dev
 echo "Building glfw."
 cd glfw
 cmake -G "Unix Makefiles"
