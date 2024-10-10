@@ -26,12 +26,6 @@
 
 
 namespace GLPL {
-	// Define Fonts
-	#ifdef _WIN32
-		#define FONTPATH "C:/Windows/Fonts/Arial.ttf"
-	#elif __linux__
-		#define FONTPATH "/usr/share/fonts/truetype/ubuntu/Ubuntu-R.ttf"
-	#endif
 
 	enum CurrentAction {
 		NO_ACTION,
@@ -50,7 +44,7 @@ namespace GLPL {
 	class Window : public IWindow, TopLevelDrawable {
 	public:
 	    // Constructor
-        Window(int windowWidth, int windowHeight, bool transparentBackground = GLFW_FALSE, bool focusOnShow = GLFW_FALSE);
+        Window(int windowWidth, int windowHeight, bool printSelected = false, bool transparentBackground = GLFW_FALSE, bool focusOnShow = GLFW_FALSE);
         ~Window();
 	    // Functions
 	    void setKeysByIndex(int index, bool boolean, int mode);
