@@ -13,6 +13,7 @@ set(OpenGL_GL_PREFERENCE "GLVND")
 # Add c++14 flag to compiler
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall")
+add_definitions(-DGLM_ENABLE_EXPERIMENTAL)
 
 # Add Cmake Module Path
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake/")
