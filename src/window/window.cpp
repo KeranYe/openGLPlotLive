@@ -27,6 +27,23 @@ namespace GLPL {
         Window::updateStoredSize();
     }
 
+    Window::Window(float windowPosX, float windowPosY, int windowWidth, int windowHeight, bool printSelected, bool transparentBackground, bool focusOnShow) :
+            TopLevelDrawable(windowPosX, windowPosY, windowWidth, windowHeight) {
+        // Set window options
+        this->printSelected = printSelected;
+        this->transparentBackground = transparentBackground;
+        this->focusOnShow = focusOnShow;
+
+        // Initialise GLFW
+        Window::initGLFW();
+
+        // Create Shader Set
+        shaderSetPt = std::make_shared<ShaderSet>();
+
+        // Update Stored Size
+        Window::updateStoredSize();
+    }
+
     Window::~Window() {
 
     }

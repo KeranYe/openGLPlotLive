@@ -45,6 +45,7 @@ namespace GLPL {
 	public:
 	    // Constructor
         Window(int windowWidth, int windowHeight, bool printSelected = false, bool transparentBackground = GLFW_FALSE, bool focusOnShow = GLFW_FALSE);
+		Window(float windowPosX, float windowPosY, int windowWidth, int windowHeight, bool printSelected = false, bool transparentBackground = GLFW_FALSE, bool focusOnShow = GLFW_FALSE);
         ~Window();
 	    // Functions
 	    void setKeysByIndex(int index, bool boolean, int mode);
